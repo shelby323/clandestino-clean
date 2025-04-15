@@ -17,7 +17,7 @@ def chat_completions():
         },
         json=data
     )
-    return (response.text, response.status_code, response.headers.items())
+    return jsonify(response.json()), response.status_code
 
 if __name__ == "__main__":
     app.run(debug=False, host="0.0.0.0", port=10000)
